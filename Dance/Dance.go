@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
+	//https://blog.golang.org/gos-declaration-syntax
+	//https://tour.golang.org/basics/8
 	var amountOfDances int
 
 	fmt.Print("Enter amount of times you want to dance: ")
@@ -28,6 +30,7 @@ func dance(amountOfDances int) {
 	*/
 
 	//Switch between frame 0 and 1
+	//Here the type will be inferred.
 	var dance = false
 	/*
 		Short-hand notation:
