@@ -9,6 +9,9 @@ This repository is meant for learning the golang language.
 </ul>
 <img src="assets/golang.png">
 
-## Installing
+## Installing Dance App
 brew install https://raw.githubusercontent.com/AlnaberA/golang_tutorial_projects/master/golang_tutorial_projects.rb
+
+## Resources
+https://www.golang-book.com/books/intro
 
