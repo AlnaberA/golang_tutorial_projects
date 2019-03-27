@@ -11,7 +11,7 @@ func main() {
 	var amountOfDances int
 
 	fmt.Print("Enter amount of times you want to dance: ")
-	//Why &amountOfDances, and not just amountOfDances.
+
 	//Parameters are passed by value in Go. amountOfDances is the integer value in amountOfDances, &amountOfDances is a pointer to amountOfDances
 	fmt.Scan(&amountOfDances)
 
