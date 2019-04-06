@@ -9,7 +9,7 @@ func main() {
 	stdout, err := cmd.Output()
 	if err != nil {
 		println(err.Error())
-		return
+		// If there is an error the program exits the program with status 1.
 	}
 
 	print(string(stdout))
