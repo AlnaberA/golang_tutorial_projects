@@ -1,3 +1,4 @@
 Golang allows for multiple files under the same folder with the same package name. 
 Golang does not allow for multiple package names under the same directory.
 One package per directory.
+Writing, building, installing, and testing Go code - https://www.youtube.com/watch?v=XCsL89YtqCs

@@ -2,9 +2,9 @@ package main
 
 // https://golang.org/pkg/
 
-import "../util"
-import "../util/helper"
-import "packaging/math_package"
+import "golang_tutorial_projects/util"
+import "golang_tutorial_projects/util/helper"
+import "golang_tutorial_projects/mathPackage"
 
 //Aliases can be used to simplify import usuage
 //import help "../util/helper"
@@ -14,5 +14,6 @@ import "packaging/math_package"
 func main() {
 	println(util.GetPackageName())
 	helper.PrintHelloWorld()
-	math_package.Add(1, 1)
+	var num = mathPackage.Add(1, 1)
+	println(num)
 }
