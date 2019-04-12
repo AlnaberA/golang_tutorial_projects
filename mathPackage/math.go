@@ -12,7 +12,7 @@ func Add(a, b int) int {
 }
 
 //The lower case function name makes the subtract function not exported.
-//The upper case Add func is makes the add function visible or exported.
+//The upper case Add func makes the add function visible or exported.
 func subtract(a, b int) int {
 	return a - b
 }
