@@ -32,7 +32,6 @@ func (rect rectangle) perimeter() float64 {
 	return 2*rect.width + 2*rect.height
 }
 
-//Method that operates on circle
 func (c circle) perimeter() float64 {
 	return 2 * math.Pi * c.radius
 }
