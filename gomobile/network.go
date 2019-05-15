@@ -54,7 +54,9 @@ func main() {
 	//go starts a goroutine(a lightweight thread of execution.), which is managed by golang run-time.
 	go checkNetwork()
 
+	// In summary this App draws a green screen if you can connect to http://golang.org/ else prints a red screen.
 	app.Main(func(a app.App) {
+		//Open graphics context
 		var glctx gl.Context
 		det, sz := determined, size.Event{}
 		for {
@@ -86,6 +88,8 @@ var (
 	ok         = false
 )
 
+//Func to check network.
+//If can connect to http://golang.org/ set ok to true.
 func checkNetwork() {
 	defer close(determined)
 
@@ -97,6 +101,7 @@ func checkNetwork() {
 	ok = true
 }
 
+//Func to set and clear the color
 func onDraw(glctx gl.Context, sz size.Event) {
 	select {
 	case <-determined:
