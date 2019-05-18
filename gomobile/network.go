@@ -51,7 +51,7 @@ import (
 
 func main() {
 	// checkNetwork runs only once when the app first loads.
-	//go starts a goroutine(a lightweight thread of execution.), which is managed by golang run-time.
+	//Keyword go, starts a goroutine(a lightweight thread of execution.), which is managed by golang run-time.
 	go checkNetwork()
 
 	// In summary this App draws a green screen if you can connect to http://golang.org/ else prints a red screen.
@@ -59,12 +59,16 @@ func main() {
 		//Open graphics context
 		var glctx gl.Context
 		det, sz := determined, size.Event{}
+
+		//(If you omit the loop condition it loops forever, so an infinite loop is compactly expressed.)
 		for {
+			//The select statement lets a goroutine wait on multiple communication operations.
+			//A select blocks until one of its cases can run, then it executes that case.
 			select {
 			case <-det:
 				a.Send(paint.Event{})
 				det = nil
-
+			// Here are the different events that can occur in our app; There is the lifecyle event, paint, and size events
 			case e := <-a.Events():
 				switch e := a.Filter(e).(type) {
 				case lifecycle.Event:
@@ -84,6 +88,8 @@ func main() {
 }
 
 var (
+	//make - allows to create dynamically-sized arrays
+	//Channels are a typed conduit through which you can send and receive values with the channel operator, <-.(Data flows the direction of the arrow)
 	determined = make(chan struct{})
 	ok         = false
 )
@@ -106,6 +112,7 @@ func onDraw(glctx gl.Context, sz size.Event) {
 	select {
 	case <-determined:
 		if ok {
+			//ClearColor(red, green, blue, alpha float32)
 			glctx.ClearColor(0, 1, 0, 1)
 		} else {
 			glctx.ClearColor(1, 0, 0, 1)
