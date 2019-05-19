@@ -11,29 +11,33 @@
   body {
     margin: 0;
     height: 100%;
-    overflow: hidden
+    overflow: hidden;
+    background-image: url("assets/images/background.jpg");
+    background-repeat: no-repeat;
   }
 </style>
-
-<body style='background-image: url("assets/images/background.jpg"); background-repeat: no-repeat;'>
+<body>
   <img src="<%= rootPath() %>assets/images/GOT.png" alt="" style="width: 75%;
                                                                   display: block;
                                                                   margin-left: auto;
                                                                   margin-right: auto;">
   <div class="container">
     <div class="row">
-      <div class="col-sm">
-        <img src="<%= rootPath() %>assets/images/GOTLogos/House-Lannister.png" alt="" style="max-width: 75%;">
+      <div class="col-sm" id="House-Lannister">
+        <a href="<%= houseLanisterPath() %>"><img src="<%= rootPath() %>assets/images/GOTLogos/House-Lannister.png" alt=""
+            style="max-width: 75%;" /></a>
       </div>
-      <div class="col-sm">
-        <img src="<%= rootPath() %>assets/images/GOTLogos/HouseStark.png" alt="" style="max-width: 75%;">
+      <div class="col-sm" id="HouseStark">
+        <!-- By default, Buffalo will name your routes for you in the form of pathnamePath. -->
+        <a href="<%= houseStarkPath() %>"><img src="<%= rootPath() %>assets/images/GOTLogos/HouseStark.png" alt=""
+            style="max-width: 75%;" /></a>
       </div>
-      <div class="col-sm">
-        <img src="<%= rootPath() %>assets/images/GOTLogos/HouseTarg.png" alt="" style="max-width: 75%;">
+      <div class="col-sm" id="HouseTarg">
+        <a href="<%= houseTargPath() %>"><img src="<%= rootPath() %>assets/images/GOTLogos/HouseTarg.png" alt=""
+            style="max-width: 75%;" /></a>
       </div>
     </div>
   </div>
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
   </script>
@@ -44,5 +48,4 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
 </body>
-
 </html>
